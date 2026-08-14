@@ -1,0 +1,22 @@
+# Build objects
+*.o
+*.obj
+*.pdb
+*.ilk
+
+# Cache and generated output files (keep folder structure)
+processed_cache/*
+!processed_cache/.gitkeep
+output/*
+!output/.gitkeep
+
+# Local portable FFmpeg binaries (downloaded via download_ffmpeg.bat)
+bin/*.exe
+bin/*.zip
+!bin/.gitkeep
+
+# Environment / IDE files
+.vscode/
+.idea/
+*.suo
+*.user

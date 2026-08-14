@@ -1,0 +1,11 @@
+SiiNunit
+{
+live_stream_def : .live_streams {
+ stream_data: 5
+ stream_data[0]: "https://media-sov.musicradio.com/CapitalUKMP3|Capital FM UK|Top 40 / Hits|EN|128|0"
+ stream_data[1]: "https://media-ssl.musicradio.com/HeartLondon|Heart UK|Pop / Variety|EN|128|0"
+ stream_data[2]: "https://media-ssl.musicradio.com/SmoothUK|Smooth Radio UK|Soft Adult Contemporary|EN|128|0"
+ stream_data[3]: "https://media-ssl.musicradio.com/ClassicFM|Classic FM UK|Classical|EN|128|0"
+ stream_data[4]: "https://media-ssl.musicradio.com/LBCUK|LBC Radio UK|News & Talk|EN|128|0"
+}
+}
