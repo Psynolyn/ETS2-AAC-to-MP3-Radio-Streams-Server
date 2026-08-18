@@ -358,14 +358,14 @@ int main() {
     fs_util::create_dir_if_missing("input");
     fs_util::create_dir_if_missing("output");
     fs_util::create_dir_if_missing("processed_cache");
-    fs_util::create_dir_if_missing("bin");
+    fs_util::create_dir_if_missing("ffmpeg");
 
     std::string ffprobe_path = ets2_radio::get_ffprobe_path();
     if (!check_ffprobe_executable(ffprobe_path)) {
         std::cerr << "========================================================\n"
                   << " ERROR: ffprobe executable not found!\n"
                   << " Checked path: " << ffprobe_path << "\n\n"
-                  << " Please place 'ffmpeg.exe' and 'ffprobe.exe' in 'bin/' folder\n"
+                  << " Please place 'ffmpeg.exe' and 'ffprobe.exe' in 'ffmpeg/' folder\n"
                   << " or run 'download_ffmpeg.bat' to download them automatically.\n"
                   << "========================================================" << std::endl;
         return 1;

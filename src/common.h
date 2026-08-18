@@ -52,23 +52,27 @@ inline bool file_exists(const std::string& path) {
 #endif
 }
 
-// Portable resolution for ffmpeg.exe path
+// Portable resolution for ffmpeg.exe path (checks ffmpeg/ folder first)
 inline std::string get_ffmpeg_path() {
+    if (file_exists("ffmpeg\\ffmpeg.exe")) return "ffmpeg\\ffmpeg.exe";
+    if (file_exists("ffmpeg/ffmpeg.exe")) return "ffmpeg/ffmpeg.exe";
+    if (file_exists("ffmpeg\\bin\\ffmpeg.exe")) return "ffmpeg\\bin\\ffmpeg.exe";
+    if (file_exists("ffmpeg/bin/ffmpeg.exe")) return "ffmpeg/bin/ffmpeg.exe";
     if (file_exists("bin\\ffmpeg.exe")) return "bin\\ffmpeg.exe";
     if (file_exists("bin/ffmpeg.exe")) return "bin/ffmpeg.exe";
     if (file_exists("ffmpeg.exe")) return "ffmpeg.exe";
-    if (file_exists("ffmpeg\\bin\\ffmpeg.exe")) return "ffmpeg\\bin\\ffmpeg.exe";
-    if (file_exists("ffmpeg/bin/ffmpeg.exe")) return "ffmpeg/bin/ffmpeg.exe";
     return "ffmpeg";
 }
 
-// Portable resolution for ffprobe.exe path
+// Portable resolution for ffprobe.exe path (checks ffmpeg/ folder first)
 inline std::string get_ffprobe_path() {
+    if (file_exists("ffmpeg\\ffprobe.exe")) return "ffmpeg\\ffprobe.exe";
+    if (file_exists("ffmpeg/ffprobe.exe")) return "ffmpeg/ffprobe.exe";
+    if (file_exists("ffmpeg\\bin\\ffprobe.exe")) return "ffmpeg\\bin\\ffprobe.exe";
+    if (file_exists("ffmpeg/bin/ffprobe.exe")) return "ffmpeg/bin/ffprobe.exe";
     if (file_exists("bin\\ffprobe.exe")) return "bin\\ffprobe.exe";
     if (file_exists("bin/ffprobe.exe")) return "bin/ffprobe.exe";
     if (file_exists("ffprobe.exe")) return "ffprobe.exe";
-    if (file_exists("ffmpeg\\bin\\ffprobe.exe")) return "ffmpeg\\bin\\ffprobe.exe";
-    if (file_exists("ffmpeg/bin/ffprobe.exe")) return "ffmpeg/bin/ffprobe.exe";
     return "ffprobe";
 }
 
