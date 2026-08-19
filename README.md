@@ -14,7 +14,7 @@ This tool seamlessly probes your radio streams, tags non-MPEG streams with `(mus
 ETS2-AAC-to-MP3-Radio-Streams-Server/
 ├── ffmpeg/              # Portable ffmpeg.exe & ffprobe.exe location
 ├── input/               # Place input live_streams.sii or multiple stream files here
-│   └── live_streams.sii # Sample stream list with 5 popular global AAC radio stations
+│   └── live_streams.sii # Sample stream list with AAC radio stations
 ├── src/                 # Source code
 │   ├── common.h         # Shared path resolution, parsing & string utilities
 │   ├── update_streams.cpp # Multi-file codec probe & output generator
@@ -29,23 +29,19 @@ ETS2-AAC-to-MP3-Radio-Streams-Server/
 
 ## Quick Start Guide
 
-### Step 1: Ensure FFmpeg is Available
-- If you already have `ffmpeg` installed in system `PATH`, you're ready.
-- If not, double-click `download_ffmpeg.bat` to automatically download and extract portable `ffmpeg.exe` and `ffprobe.exe` into the `ffmpeg/` folder.
-
-### Step 2: Prepare Input Stream File(s)
+### Step 1: Prepare Input Stream File(s)
 - Place your `live_streams.sii` file (or multiple `.sii` / `.txt` files) into the `input/` folder.
 
-### Step 3: Run `update_streams.exe`
+### Step 2: Run `update_streams.exe`
 - Double-click `update_streams.exe`.
 - It will scan all files in `input/`, probe stream audio codecs, append `(must run server)` to AAC streams, build routing tables in `processed_cache/server_routes.txt`, and generate all final ready-to-use `.sii` files in the `output/` folder.
 
-### Step 4: Run `server.exe`
+### Step 3: Run `server.exe`
 - Double-click `server.exe`.
 - The server will immediately load all active stream routes and start the HTTP audio server on `http://localhost:8080`.
 - Keep `server.exe` running while playing ETS2/ATS.
 
-### Step 5: Copy Output to ETS2 Profile
+### Step 4: Copy Output to ETS2 Profile
 - Copy your prepared `.sii` file (e.g. `live_streams.sii`) from `output/` into your Euro Truck Simulator 2 profile folder:
   `Documents\Euro Truck Simulator 2\` (or `Documents\American Truck Simulator\`).
 - Launch ETS2, open the in-game Radio player, and enjoy listening to all your radio stations!
