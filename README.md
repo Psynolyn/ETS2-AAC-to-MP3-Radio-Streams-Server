@@ -1,23 +1,10 @@
 # ETS2 AAC to MP3 Radio Streams Server
 
-A high-performance C++ local audio transcoding server and stream list updater for **Euro Truck Simulator 2 (ETS2)** and **American Truck Simulator (ATS)**.
+A local audio transcoding server and stream list updater for **Euro Truck Simulator 2 (ETS2)** and **American Truck Simulator (ATS)**.
 
 Euro Truck Simulator 2's built-in radio player natively only supports MP3 / MPEG audio streams. Many modern radio stations stream in **AAC / AAC+ / HLS**, causing them to fail to play in-game. 
 
 This tool seamlessly probes your radio streams, tags non-MPEG streams with `(must run server)`, hosts an HTTP stream server on `localhost:8080`, and streams live AAC radio stations auto-converted to MP3 format in real time using **FFmpeg**.
-
----
-
-## Key Features
-
-- **Plug-and-Play Executables**: Precompiled native Windows C++ binaries (`update_streams.exe` & `server.exe`) packaged in release builds.
-- **Multiple `.sii` File Support**: Drop one or multiple stream files (`live_streams.sii`, `kenya_radios.sii`, etc.) into `input/`. `update_streams.exe` processes all of them at once.
-- **Clear Workflow Separation**:
-  - `update_streams.exe`: Scans all files in `input/`, probes codecs with `ffprobe`, builds server routes, and writes all ready-to-use `.sii` files directly into `output/`.
-  - `server.exe`: Fast zero-delay startup. Loads cached routes and hosts the live AAC to MP3 audio stream server.
-- **Portable FFmpeg Auto-Binding**: Automatically searches for portable `ffmpeg.exe` / `ffprobe.exe` in `./ffmpeg/`, `./`, or system `PATH`. Includes a 1-click `download_ffmpeg.bat` downloader script.
-- **Smart Tagging**: Converts all occurrences of old `proxy` terminology to `server` and tags AAC stream names with `(must run server)`.
-- **Multi-Threaded Codec Probing**: Fast parallel probing using `ffprobe` to categorize MPEG vs AAC streams.
 
 ---
 
@@ -95,4 +82,4 @@ g++ -O2 -std=c++17 src/server.cpp -o server.exe -lws2_32
 
 ## License
 
-MIT License. Free for all ETS2 & ATS sim drivers and modders!
+MIT License. 
